@@ -16,12 +16,19 @@ _global_script_class_icons={
 [application]
 
 config/name="Pong"
+run/main_scene="res://scenes/Pong.tscn"
 config/icon="res://icon.png"
 
 [display]
 
 window/size/height=512
 window/size/resizable=false
+
+[layer_names]
+
+2d_physics/layer_1="racket"
+2d_physics/layer_2="ball"
+2d_physics/layer_3="wall"
 
 [rendering]
 

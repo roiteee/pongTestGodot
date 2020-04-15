@@ -1,0 +1,87 @@
+[gd_scene load_steps=5 format=2]
+
+[sub_resource type="Gradient" id=1]
+offsets = PoolRealArray( 0 )
+colors = PoolColorArray( 1, 1, 1, 1 )
+
+[sub_resource type="GradientTexture" id=2]
+gradient = SubResource( 1 )
+width = 1
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 5, 256 )
+
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 5, 512 )
+
+[node name="Border" type="Node2D"]
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="BorderLeft" type="StaticBody2D" parent="."]
+position = Vector2( 5, 256 )
+collision_layer = 4
+collision_mask = 3
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="BorderLeft"]
+scale = Vector2( 10, 512 )
+texture = SubResource( 2 )
+
+[node name="Mid" type="Sprite" parent="BorderLeft"]
+position = Vector2( 512, 0 )
+scale = Vector2( 3, 512 )
+texture = SubResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BorderLeft"]
+shape = SubResource( 3 )
+
+[node name="BorderTop" type="StaticBody2D" parent="."]
+position = Vector2( 512, 5 )
+rotation = -1.5708
+collision_layer = 4
+collision_mask = 3
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="BorderTop"]
+scale = Vector2( 10, 1024 )
+texture = SubResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BorderTop"]
+shape = SubResource( 4 )
+
+[node name="BorderBottom" type="StaticBody2D" parent="."]
+position = Vector2( 512, 507 )
+rotation = -1.5708
+collision_layer = 4
+collision_mask = 3
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="BorderBottom"]
+scale = Vector2( 10, 1024 )
+texture = SubResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BorderBottom"]
+shape = SubResource( 4 )
+
+[node name="BorderRight" type="StaticBody2D" parent="."]
+position = Vector2( 1019, 256 )
+collision_layer = 4
+collision_mask = 3
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="BorderRight"]
+scale = Vector2( 10, 512 )
+texture = SubResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BorderRight"]
+shape = SubResource( 3 )
